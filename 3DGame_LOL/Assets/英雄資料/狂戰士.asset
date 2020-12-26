@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4fb6cb0e8479c4682f85a38a98c529, type: 3}
+  m_Name: "\u72C2\u6230\u58EB"
+  m_EditorClassIdentifier: 
+  hp: 500
+  mp: 100
+  speed: 5
+  attack: 30
+  attackcd: 3
+  skills:
+  - name: "\u5730\u70C8\u64CA"
+    attack: 2
+    cost: 0
+    image: {fileID: 21300000, guid: 668c4b337aaf93349a21a0598e6b4f41, type: 3}
+    cd: 7
+  - name: "\u81EA\u6211\u5F37\u5316"
+    attack: 0
+    cost: 10
+    image: {fileID: 21300000, guid: a16dc8fc902adb74ca4982c9e8a307f2, type: 3}
+    cd: 8
+  - name: "\u81F4\u547D\u780D\u64CA"
+    attack: 7
+    cost: 10
+    image: {fileID: 21300000, guid: b80a8f22f2cadb542a375b8e6ea4c394, type: 3}
+    cd: 10
+  - name: "\u5730\u9707\u6CE2"
+    attack: 10
+    cost: 10
+    image: {fileID: 21300000, guid: 7f7e600a8a3d75849bd3b072b5cf2c10, type: 3}
+    cd: 10
