@@ -5,21 +5,23 @@ public class HeroBase : MonoBehaviour
     /// <summary>
     /// 技能計時器，累加時間用
     /// </summary>
-    private float[] skillTimer = new float[4];
+    protected float[] skillTimer = new float[4];
     public RoleData data;
     private Animator ani;
+    private Rigidbody rig;
     /// <summary>
     /// 技能是否開始
     /// </summary>
-    private bool[] skillStart = new bool[4];
+    protected bool[] skillStart = new bool[4];
     //protected 保護 - 允許子類別存取
     //virtual 虛擬 - 允許子類別複寫
     protected virtual void Awake()
     {
         ani = GetComponent<Animator>();
-
+        rig = GetComponent<Rigidbody>();
     }
-    private void Update()
+
+    protected virtual void Update()
     {
         TimeControl();
     }
@@ -41,9 +43,18 @@ public class HeroBase : MonoBehaviour
         }
         
     }
-    public void Move()
+    /// <summary>
+    /// 移動
+    /// </summary>
+    public void Move(Transform target)
     {
-
+        Vector3 pos = rig.position;
+        //剛體.移動座標(座標)
+        rig.MovePosition(target.position);
+        //看向(目標物件)
+        transform.LookAt(target);
+        //動畫.設定布林值(跑步參數,現在座標 不等於 前面座標)
+        ani.SetBool("跑步開關", rig.position != pos);
     }
     public void Skill1()
     {
